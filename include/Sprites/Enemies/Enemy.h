@@ -9,31 +9,31 @@ class Enemy: public Ship
         Enemy(pVar p, dVar d, jgl::Color c, jgl::Object* s, jutil::String str);
         virtual ~Enemy();
 
-    void move() override;
+    virtual void move() = 0;
 
-    void setMoveTimer(int);
-    int getMoveTimer();
-    void abilityOne();
-    void abilityTwo();
-    void abilityThree();
+   // virtual void setMoveTimer(int) = 0;
+   // virtual int getMoveTimer() = 0;
+    virtual void abilityOne() = 0;
+    virtual void abilityTwo() = 0;
+    virtual void abilityThree() = 0;
 
-    void targetPlayer();
+    virtual void targetPlayer() = 0;
 
-    long double getLPosX();
-    long double getLPosY();
+    virtual long double getLPosX() = 0;
+    virtual long double getLPosY() = 0;
 
 
 
-    void setOffset(jml::Vector2ld);
+    virtual void setOffset(jml::Vector2ld) = 0;
 
 
     protected:
-
-    private:
         int phase;
         long double lPosX;
         long double lPosY;
         jml::Vector2ld offSet;
+    private:
+
 
 
 };

@@ -22,9 +22,6 @@ InGame::~InGame()
 }
 
 
-
-
-
 // Key::A, Key::D, Key::W,Key::S
 
 void InGame::createInstance() {

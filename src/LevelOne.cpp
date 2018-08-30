@@ -1,4 +1,5 @@
 #include "LevelOne.h"
+#include "BossOne.h"
 
 Player *LevelOne::getPlayer()  {
     return p;
@@ -41,7 +42,7 @@ void LevelOne::createLevelData() {
     instance->q = new jgl::Quad({0,0},{25,25},jgl::Color::Blue);
     instance->eQ = new jgl::Quad({0, -710/2},{100,100},jgl::Color::Red);
     instance->p = new Player({0,300},{10,10},jgl::Color::Blue, instance->q, "",  Key::ARROW_LEFT, Key::ARROW_RIGHT, Key::ARROW_UP,Key::ARROW_DOWN, Key::LEFT_SHIFT);
-    instance->e = new Enemy({0, -600 / 2},{10,10},jgl::Color::Red, instance->eQ, "");
+    instance->e = new BossOne({0, -600 / 2},{10,10},jgl::Color::Red, instance->eQ, "");
     instance->enemyHealthBar = new  jgl::Quad({-425, -300},{50, 25}, jgl::Color::Yellow);
     instance->playerHealthBar = new jgl::Quad({-500,300}, {100,25}, jgl::Color::Green);
     instance->enemyHP = new HealthBar({-400, -300},{100, 50}, jgl::Color::Yellow, instance->enemyHealthBar, "");
