@@ -1,29 +1,28 @@
-#ifndef INGAME_H
-#define INGAME_H
+#ifndef INMENU_H
+#define INMENU_H
 
 #include "GameState.h"
+#include "Options.h"
 
-class InGame : public GameState { //Singleton
+class InMenu : public GameState
+{
     public:
-        ~InGame();
-
-
+        virtual ~InMenu();
         void update() override;
         void eventHandler(jgl::Event) override;
 
-        static InGame *getInstance();
+        static InMenu *getInstance();
         static void createInstance();
-
         void setLevel(Level*) override;
 
         Level *getLevel() override;
 
     protected:
-
+        Options *op;
     private:
-        static InGame *instance;
-        InGame();
-        jgl::LightSource li;
+        static InMenu *instance;
+        InMenu();
 
 };
-#endif // INGAME_H
+
+#endif // INMENU_H

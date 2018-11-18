@@ -12,16 +12,14 @@ class BossOne: public Enemy
 
     void move() override;
 
-   // void setMoveTimer(int) override;
-   // int getMoveTimer() override;
+
     void abilityOne() override;
     void abilityTwo() override;
     void abilityThree() override;
 
     void targetPlayer() override;
 
-    long double getLPosX() override;
-    long double getLPosY() override;
+
 
 
 

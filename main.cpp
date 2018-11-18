@@ -46,7 +46,7 @@ int main() {
 
     jutil::String title = "Test";
     jgl::init(1200, title);
-    jgl::setLightingMode(JGL_LIGHTING_REALISTIC);
+    jgl::setLightingMode(JGL_LIGHTING_NONE);
     jgl::setClearColor(jgl::Color::Black);
     jgl::setMouseVisible(true);
 

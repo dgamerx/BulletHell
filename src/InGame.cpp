@@ -1,6 +1,7 @@
 #include "InGame.h"
 #include "Wiindow.h"
 #include "InPause.h"
+
 InGame *InGame::instance = NULL;
 
 InGame::InGame() : li(0, 300, jgl::Color::White)

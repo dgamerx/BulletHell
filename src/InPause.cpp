@@ -13,6 +13,14 @@ InPause::InPause()
 {
 }
 
+Level *InPause::getLevel() {
+    return lv;
+}
+
+void InPause::setLevel(Level *lev) {
+    lv = lev;
+}
+
 void InPause::createInstance() {
     instance = new InPause();
     instance->pause = new jgl::Quad({0,0},{500, 100},jgl::Color::Blue);

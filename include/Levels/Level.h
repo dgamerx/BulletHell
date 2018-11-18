@@ -33,41 +33,4 @@ class Level
 
 };
 
-
-class levelOne : public Level {
-    public:
-
-        virtual ~levelOne();
-
-        Player *getPlayer() override;
-        Enemy *getEnemy() override;
-        void resetLevel() override;
-
-
-        void update() override;
-        void deleteLevelData() override;
-        void createLevelData() override;
-
-
-        static levelOne *getInstance();
-        static void createInstance();
-
-
-
-    protected:
-        jgl::Quad *q;
-        jgl::Quad *eQ;
-        jgl::Quad *enemyHealthBar;
-        jgl::Quad *playerHealthBar;
-    private:
-        static levelOne *instance;
-        levelOne();
-        Player *p;
-        Enemy *e;
-        HealthBar *enemyHP;
-        HealthBar *playerHP;
-
-
-};
-
 #endif // LEVEL_H

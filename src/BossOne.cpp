@@ -7,16 +7,11 @@ BossOne::BossOne(pVar p, dVar d, jgl::Color c, jgl::Object* s, jutil::String str
     :
         Enemy(p, d, c, s, str)
 {
-    this->hp = 300;
+    this->hp = 150;
     this->phase = 0;
 }
 
-long double BossOne::getLPosX(){
-    return lPosX;
-}
-long double BossOne::getLPosY(){
-    return lPosY;
-}
+
 
 
 void BossOne::setOffset(jml::Vector2ld v) {
@@ -25,7 +20,7 @@ void BossOne::setOffset(jml::Vector2ld v) {
 
 
 
-void BossOne::abilityOne() {
+void BossOne::abilityOne() { // persistent fire
     long long est = InGame::getInstance()->getLevel()->getFrameCounter();
     long long interval = 300;
     long long magazine = 10;
@@ -40,9 +35,9 @@ void BossOne::abilityOne() {
 }
 
 
-void BossOne::abilityTwo() {
+void BossOne::abilityTwo() { // quick shotgun burst
     long long est = InGame::getInstance()->getLevel()->getFrameCounter();
-    long long interval = 1;
+    long long interval = 400;
     long double speed = 1;
     if(est >= interval) {
         if(est % interval == 0) {
@@ -67,9 +62,9 @@ void BossOne::abilityTwo() {
 }
 
 
-void BossOne::abilityThree() {
+void BossOne::abilityThree() { // mine spawns
     long long est = InGame::getInstance()->getLevel()->getFrameCounter();
-    long long interval = 1;
+    long long interval = 200;
     long double speed = 0.5;
     long double
     screenRight = static_cast<long double>(jgl::getWindowSize().x())  / 2.L,

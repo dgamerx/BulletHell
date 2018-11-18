@@ -11,6 +11,9 @@ class InPause : public GameState {
         static InPause *getInstance();
         static void createInstance();
 
+        Level *getLevel() override;
+        void setLevel(Level*) override;
+
     protected:
         jgl::Quad *pause;
 

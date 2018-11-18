@@ -2,7 +2,7 @@
 
 #include "Player.h"
 #include "InGame.h"
-
+#include "InMenu.h"
 
 Window *win;
 
@@ -19,7 +19,7 @@ void deleteWindow() {
 
 Window::Window()
 {
-    setGameState(InGame::getInstance());
+    setGameState(InMenu::getInstance());
 }
 
 void Window::eventHandler(jgl::Event ev) {

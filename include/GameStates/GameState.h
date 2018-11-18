@@ -14,8 +14,12 @@ class GameState
         virtual void update() = 0;
         virtual void eventHandler(jgl::Event) = 0;
 
-    protected:
+        virtual void setLevel(Level*) = 0;
 
+        virtual Level *getLevel() = 0;
+
+    protected:
+        Level *lv;
     private:
 };
 
